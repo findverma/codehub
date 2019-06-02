@@ -1,0 +1,16 @@
+	
+	SINGLE RESPONSIBILITY PRINCIPLE
+	
+	..............................................................................
+	
+	- A software entities (class , method) should have only one reason to change.
+	- If a class or a method does more than one procedure, 
+		it is recommended to separate it into distinct classes or methods
+	- It can be done easily done with the help of interfaces.
+	
+	So if we have more than one reason to change for a class 
+		we should split the functionality into two separate classes as 
+			"EACH CLASS WILL HANDLE A SINGLE RESPONSIBLITY !!!"
+			
+			- It leads to a low coupled desing with less or lighter dependencies.
+			

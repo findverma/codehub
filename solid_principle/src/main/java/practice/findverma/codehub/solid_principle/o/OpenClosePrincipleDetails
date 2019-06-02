@@ -1,0 +1,54 @@
+	OPEN/CLOSED PRINCIPLE
+	
+	................................................................................
+	What is the motivation behind the Open-closed principle?
+		As application should take care of the frequent changes that are done
+			during the development and maintaining phase of an application.
+			For example:
+				new functionalities have to be added for an entity !!!
+				new functionality have to added for one object at runtime
+			
+	why these changes should be minimized in existing code?
+		It assumed that all the existing code is already tested and 
+			these new changes in existing code may affect the existing functionality.
+			
+	...........................................................................................
+	
+	
+	Open close principle state that the design and writing of the code 
+		should be done in a way that new functionality should be added with minimum changes in existing code .
+		"WE SHOULD KEEP EXISTING CODE UNCHANGED AS MUSH AS POSSIBLE !!!"
+	
+		- software entities should be open for extension, but closed for modification:
+			We have to design every new module -> if we add a new behavior, we don't have to change the existing module.
+		
+		- A class should not extends to another class.
+			Best practices says that "ALWAYS PROGRAM FOR INTERFACE NOT FOR IMPLEMENTATION"
+			because we can changes the classes at runtime for this interface type with the help of 
+				1. Strategy Pattern
+				2. Template Pattern
+			
+			
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+				
