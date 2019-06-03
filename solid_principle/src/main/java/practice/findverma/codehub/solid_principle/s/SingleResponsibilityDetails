@@ -12,5 +12,5 @@
 		we should split the functionality into two separate classes as 
 			"EACH CLASS WILL HANDLE A SINGLE RESPONSIBLITY !!!"
 			
-			- It leads to a low coupled desing with less or lighter dependencies.
+			- It leads to a low coupled design with less or lighter dependencies.
 			
