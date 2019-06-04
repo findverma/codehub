@@ -1,0 +1,29 @@
+/*	L-> LISKOV SUBSTITUTION
+	
+	......................................................................................
+		To understand this principle , first we have to remember the rule "Program for interface not for implementation". 
+		It means you should always use interface-type(super type) as argument-type or as return-type.
+	
+		What is motivation of Liskov Substitution principle?		
+		
+		The principle defines that "super-type shall be replaceable(substitutable) with its sub-type without breaking the application." 
+		- It extends the Open/Closed Principle by focusing on the behavior of a super-class and its sub-classes.
+		- child class should never break the parent type definition.For Example:
+				interface <<A>> - add();
+				class B implements A add(){Sysout("Adding")}
+				class C implements A add(){throws RuntimeEx();}
+			public void testMethod(A ref){} 
+		// This testMethod() should work for All its subtype(B,C) without breaking functionality.The LSP says that the code should work without knowing the actual sub class of the parent type.
+		// But add() method in class C throws exception it means class C does not have this behavior. So the testMethod() violates the principle.
+		
+		Solution of Lisov violation:
+		1. Modify the existing code and use instanceof operator to check subtype before method call that throws exception.
+		2. Re design the interface with the help of interface segregation principle
+		3. use composition (HAS-A) and decorator pattern to solve this problem
+		
+		
+		Note: 
+			1. Arrays.asList(), Collections.unModifiable() etc internally use decorator pattern and it overrides few methods with UnsupportedOperationException. It means these are also violating this principle.
+			2. Is Overriding behavior in java always violate the Liskov principle?
+				No, but in some cases like Arrays.asList(), Collections.unmodifiable() etc is violating this. 
+*/
