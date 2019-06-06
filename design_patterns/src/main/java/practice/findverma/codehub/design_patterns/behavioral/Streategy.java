@@ -62,7 +62,7 @@ public class Streategy {
 		return null;
 	}
 
-	// This method is just for Object creation like factory pattern. It could be inmroved.
+	// This method is just for Object creation like factory pattern. It could be improved with reflection API.
 	private static Validator getValidator(String entityType) {
 		if("Language".equals(entityType))
 			return new LanguageValidator();

@@ -70,7 +70,7 @@ class CSVObserver implements FCObserver{
 }
  
 
-public class Observer1 {
+public class Observer {
 
 	public static void main(String[] args) {
 		CSVImportFeature fc = new CSVImportFeature("csv-Import", 191919);
