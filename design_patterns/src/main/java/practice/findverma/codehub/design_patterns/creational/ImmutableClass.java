@@ -16,13 +16,13 @@ public final class ImmutableClass {
 
 	private final int id;
 	private final String name;
-	private final HashMap<String, Object> testMap;
+	private final HashMap<String, String> testMap;
 	
 	public ImmutableClass(int i, String n, HashMap<String,String> hm){
 		System.out.println("Performing Deep Copy for Object initialization");
 		this.id=i;
 		this.name=n;
-		HashMap<String,Object> tempMap=new HashMap<>();
+		HashMap<String,String> tempMap=new HashMap<>();
 		hm.entrySet().stream().forEach((e)-> {
 			tempMap.put(e.getKey(), e.getValue());
 		});
