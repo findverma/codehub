@@ -6,7 +6,7 @@ interface CustomeLock {
 	public boolean tryLock() throws InterruptedException;
 }
 
-public class CustomeLockImpl implements CustomeLock {
+public class CustomLockImpl implements CustomeLock {
 
 	private int lockCount = 0;
 	private boolean isLocked = false;
