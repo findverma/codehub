@@ -9,6 +9,7 @@ import java.util.stream.IntStream;
 // Blocking Queue is producer consumer design pattern for shared collection.
 // you don't need to maintain thread safety by your own.
 class ProducerApproach2 implements Runnable {
+	
 	BlockingQueue<String> sharedQueue;
 
 	public ProducerApproach2(BlockingQueue<String> sharedQueue) {
@@ -34,6 +35,7 @@ class ProducerApproach2 implements Runnable {
 }
 
 class ConsumerApproach2 implements Runnable {
+	
 	BlockingQueue<String> sharedQueue;
 
 	public ConsumerApproach2(BlockingQueue<String> sharedQueue) {

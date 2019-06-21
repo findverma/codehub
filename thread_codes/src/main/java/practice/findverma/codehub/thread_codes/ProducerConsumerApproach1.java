@@ -1,6 +1,7 @@
 package practice.findverma.codehub.thread_codes;
 
 import java.util.LinkedList;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.stream.IntStream;
@@ -8,11 +9,10 @@ import java.util.stream.IntStream;
 // you can also replace wait and notify with Lock API with Condition.
 // You can also implement with the help of two Semaphore(1) and Semaphore(0).
 class ProducerApproach1 implements Runnable {
-	LinkedList<String> sharedList;
+	List<String> sharedList;
 	private final int MAX;
-	private volatile int putIndex = 0;
 
-	public ProducerApproach1(LinkedList<String> list, int max) {
+	public ProducerApproach1(List<String> list, int max) {
 		this.sharedList = list;
 		this.MAX = max;
 	}
@@ -32,28 +32,20 @@ class ProducerApproach1 implements Runnable {
 				}
 				System.out.println("Producing : "+ data);
 				sharedList.add(data);
-				putIndex++;
-				if (putIndex == sharedList.size())
-					putIndex = 0;
-
 				sharedList.notifyAll();
 			}
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 	}
-
 }
 
 class ConsumerApproach1 implements Runnable{
 
-	LinkedList<String> sharedList;
-	private final int MAX;
-	private volatile int takeIndex = 0;
+	List<String> sharedList;
 
 	public ConsumerApproach1(LinkedList<String> list, int max) {
 		this.sharedList = list;
-		this.MAX = max;
 	}
 
 	@Override
@@ -70,12 +62,8 @@ class ConsumerApproach1 implements Runnable{
 				while (sharedList.isEmpty()) {
 					sharedList.wait();
 				}
-				data = sharedList.remove();
+				data = sharedList.remove(0);
 				System.out.println("Consuming : "+ data);
-				takeIndex++;
-				if (takeIndex == sharedList.size())
-					takeIndex = 0;
-
 				sharedList.notifyAll();
 			}
 		} catch (InterruptedException e) {
@@ -83,7 +71,6 @@ class ConsumerApproach1 implements Runnable{
 		}
 		return data;
 	}
-
 
 }
 
